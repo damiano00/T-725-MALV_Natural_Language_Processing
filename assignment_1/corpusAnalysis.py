@@ -1,7 +1,9 @@
-import sys
 import nltk
+import sys
+
 from nltk import word_tokenize
 from nltk.corpus import gutenberg
+
 nltk.download('gutenberg')
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -35,7 +37,3 @@ print("Long types: " + str(long_types))
 # Get the nouns ending in 'ation'
 nouns_ending_in_ation = [word for word in types if word.endswith('ation')]
 print("Nouns ending in 'ation': " + str(nouns_ending_in_ation))
-
-
-
-
