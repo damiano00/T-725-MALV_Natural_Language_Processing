@@ -475,5 +475,5 @@ pyrightconfig.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/jetbrains+all,pycharm,intellij,visualstudiocode,jupyternotebooks,java,python
-/assignment_1/eng.sent
-/assignment_1/eng.tok
+/assignment_1/languageModeling/eng.sent
+/assignment_1/languageModeling/eng.tok
