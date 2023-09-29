@@ -479,3 +479,4 @@ pyrightconfig.json
 /assignment_1/languageModeling/eng.tok
 /assignment_1/languageModeling/engTri.freq
 /assignment_1/languageModeling/eng.trigrams
+/lab05/training_checkpoints/
