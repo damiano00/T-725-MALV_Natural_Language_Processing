@@ -1,4 +1,3 @@
-
 """
 In this part, you use Python and NLTK to process a Part-of-Speech tagged Icelandic corpus, the Icelandic Gold
 Standard; MIM-GOLD1. A preprocessed version of MIM-GOLD containing one sentence per line (with “/” between
@@ -20,11 +19,9 @@ from nltk.corpus.reader import TaggedCorpusReader
 
 def main():
     corpus_root = './MIM-GOLD.sent'
-    TaggedCorpusReader(corpus_root, '.*').words()
-    print("Number of sentences: ", len(TaggedCorpusReader(corpus_root, '.*').sents()))
-    print("Tokens of sentence 100: ", TaggedCorpusReader(corpus_root, '.*').sents()[100])
-    print("Number of tokens: ", len(TaggedCorpusReader(corpus_root, '.*').words()))
-    print("Number of types: ", len(set(TaggedCorpusReader(corpus_root, '.*').words())))
-    print("10 most frequent tokens: ", TaggedCorpusReader(corpus_root, '.*').words())
-    print("20 most frequent tags: ", TaggedCorpusReader(corpus_root, '.*').tagged_words())
+    # display the number of sentences
+    mim_gold = TaggedCorpusReader(corpus_root, r'.*\.sent')
+    print("Number of sentences: ", len(mim_gold.sents()))
 
+
+main()
