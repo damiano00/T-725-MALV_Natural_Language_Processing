@@ -480,3 +480,7 @@ pyrightconfig.json
 /assignment_1/languageModeling/engTri.freq
 /assignment_1/languageModeling/eng.trigrams
 /lab05/training_checkpoints/
+/assignment_2/MIM-GOLD.sent
+/assignment_2/penn.test.txt
+/assignment_2/penn.train.txt
+/assignment_2/.idea/
