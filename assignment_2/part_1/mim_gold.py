@@ -30,11 +30,11 @@ def main():
         print(f"{tag} => {count}")
 
     print("\nThe 10 most frequent tags that can follow the tag ’af’:")
-    types = []
+    pos_tags = []
     for sentence in mim_gold.tagged_sents():
         for word in sentence:
-            types.append(word[1])
-    tag_bigrams = bigrams(types)
+            pos_tags.append(word[1])
+    tag_bigrams = bigrams(pos_tags)
     cfd = ConditionalFreqDist(tag_bigrams)
     tags_following_af = cfd['AF'].most_common(10)
     for tag in tags_following_af:
