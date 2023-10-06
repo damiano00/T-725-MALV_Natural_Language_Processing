@@ -429,4 +429,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/jetbrains+all,python,virtualenv,venv,macos,windows,linux,pycharm+all,powershell,git
-/.idea/
