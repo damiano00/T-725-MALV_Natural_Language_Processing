@@ -45,6 +45,24 @@ def main():
     # a backoff model is because the BigramTagger without a backoff model is not able to tag words that are not in the
     # training set.
 
-    # 2.5: TODO: FINISH THIS
+    # 2.5
+    sentences_to_tag = []
+    for sentence in test_set:
+        words_in_sentence = [word_info[0] for word_info in sentence]
+        sentences_to_tag.append(words_in_sentence)
+    default_tagger_results = nltk.pos_tag_sents(sentences_to_tag)
+
+    def evaluate(results, expected):
+        correct = 0
+        total = 0
+        for i in range(len(results)):
+            for j in range(len(results[i])):
+                if results[i][j][1] == expected[i][j][1]:
+                    correct += 1
+                total += 1
+        return correct / total
+
+    print("Default tagger evaluation: ", round(evaluate(default_tagger_results, test_set)*100, 2), "%")
+
 
 main()
