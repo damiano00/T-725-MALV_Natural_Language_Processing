@@ -38,7 +38,7 @@ def main():
     print("Number of test sentences: ", len(test_set), "\n")
     print("First sentence in test corpus: " + "\n" + str(test_set[0]) + "\n")
 
-    # print 2.2 and 2.3
+    # 2.2 and 2.3
     curr_tagger = None
     for i in range(len(taggers)*2):
         if i in range(0, len(taggers)):
@@ -50,7 +50,7 @@ def main():
                 print("\nTagging accuracies with backoff:\n--------------------------------")
             curr_tagger = run_tagger(taggers[i-4], training_set, test_set, curr_tagger)
 
-    # 2.4 --> read report
+    # 2.4 --> written in the report
 
     # 2.5
     sentences_to_tag = []
