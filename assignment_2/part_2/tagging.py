@@ -12,23 +12,15 @@ test_set = tagged_sentences[3500:]
 def run_tagger(tagger, train_set, testing_set, backoff_tagger=None):
     """
     This function trains a tagger on the training set and evaluates it on the test set
-    :param tagger: tagger from nltk to be used to tag the sentences
-    :param train_set: the training set to train the tagger on
-    :param testing_set: the test set to evaluate the tagger on
-    :param backoff_tagger: the tagger to be used as backoff, if None, no backoff is used
-    :return: the trained tagger
     """
     tagger = tagger(train_set, backoff=backoff_tagger)
-    print(tagger.__class__.__name__ +" evaluation:", round(tagger.accuracy(testing_set) * 100, 2), "%")
+    print(tagger.__class__.__name__ + " evaluation:", round(tagger.accuracy(testing_set) * 100, 2), "%")
     return tagger
 
 
 def evaluate(results, expected):
     """
     For each sentence in the test set, this function compares the results of the default tagger with the expected
-    :param results: The results of the default tagger
-    :param expected: The expected results
-    :return: The accuracy of the default tagger
     """
     correct = 0
     total = 0
@@ -46,16 +38,17 @@ def main():
     print("Number of test sentences: ", len(test_set), "\n")
     print("First sentence in test corpus: " + "\n" + str(test_set[0]) + "\n")
 
-    # 2.2
-    print("Tagging accuracies:\n-------------------")
-    for tagger in taggers:
-        run_tagger(tagger, training_set, test_set)
-
-    # 2.3
-    print("\nTagging accuracies with backoff:\n--------------------------------")
+    # print 2.2 and 2.3
     curr_tagger = None
-    for tagger in taggers:
-        curr_tagger = run_tagger(tagger, training_set, test_set, curr_tagger)
+    for i in range(len(taggers)*2):
+        if i in range(0, len(taggers)):
+            if i == 0:
+                print("Tagging accuracies:\n-------------------")
+            run_tagger(taggers[i], training_set, test_set)
+        elif i in range(len(taggers), len(taggers)*2):
+            if i == len(taggers):
+                print("\nTagging accuracies with backoff:\n--------------------------------")
+            curr_tagger = run_tagger(taggers[i-4], training_set, test_set, curr_tagger)
 
     # 2.4 --> read report
 
