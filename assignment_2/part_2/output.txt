@@ -6,16 +6,16 @@ First sentence in test corpus:
 
 Tagging accuracies:
 -------------------
-Affix tagger:  27.56 %
-Unigram tagger:  86.08 %
-Bigram tagger:  13.47 %
-Trigram tagger:  8.06 %
+AffixTagger evaluation: 27.56 %
+UnigramTagger evaluation: 86.08 %
+BigramTagger evaluation: 13.47 %
+TrigramTagger evaluation: 8.06 %
 
 Tagging accuracies with backoff:
 --------------------------------
-Affix tagger evaluation:  27.56 %
-Unigram tagger evaluation:  89.85 %
-Bigram tagger evaluation:  90.8 %
-Trigram tagger evaluation:  90.72 %
+AffixTagger evaluation: 27.56 %
+UnigramTagger evaluation: 89.85 %
+BigramTagger evaluation: 90.8 %
+TrigramTagger evaluation: 90.72 %
 
 Accuracy of the default tagger in NLTK:  89.15 %
