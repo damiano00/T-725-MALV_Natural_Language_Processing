@@ -25,6 +25,7 @@ def main():
     print("Bigram tagger: ", round(bigram_tagger.accuracy(test_set)*100, 2), "%")
     trigram_tagger = nltk.TrigramTagger(training_set)
     print("Trigram tagger: ", round(trigram_tagger.accuracy(test_set)*100, 2), "%", "\n")
+
     # 2.3
     print("Tagging accuracies with backoff:\n--------------------------------")
     backoff_tagger = affix_tagger
@@ -35,6 +36,7 @@ def main():
     print("Bigram tagger evaluation: ", round(backoff_tagger.accuracy(test_set)*100, 2), "%")
     backoff_tagger = nltk.TrigramTagger(training_set, backoff=backoff_tagger)
     print("Trigram tagger evaluation: ", round(backoff_tagger.accuracy(test_set)*100, 2), "%", "\n")
+
     # 2.4
     # The reason for this is that the taggers without a backoff model are not able to tag words that are not in the
     # training set. This is because they do not have a fallback option. The backoff model is able to tag words that
@@ -53,6 +55,12 @@ def main():
     default_tagger_results = nltk.pos_tag_sents(sentences_to_tag)
 
     def evaluate(results, expected):
+        """
+        For each sentence in the test set, this function compares the results of the default tagger with the expected
+        :param results: The results of the default tagger
+        :param expected: The expected results
+        :return: The accuracy of the default tagger
+        """
         correct = 0
         total = 0
         for i in range(len(results)):
@@ -62,7 +70,7 @@ def main():
                 total += 1
         return correct / total
 
-    print("Default tagger evaluation: ", round(evaluate(default_tagger_results, test_set)*100, 2), "%")
+    print("Accuracy of the default tagger in NLTK: ", round(evaluate(default_tagger_results, test_set)*100, 2), "%")
 
 
 main()

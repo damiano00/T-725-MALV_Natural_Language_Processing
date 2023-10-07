@@ -1,0 +1,21 @@
+Number of training sentences:  3500
+Number of test sentences:  414
+
+First sentence in test corpus:
+[('About', 'IN'), ('30', 'CD'), ('%', 'NN'), ('of', 'IN'), ('Ratners', 'NNP'), ("'s", 'POS'), ('profit', 'NN'), ('already', 'RB'), ('is', 'VBZ'), ('derived', 'VBN'), ('*-1', '-NONE-'), ('from', 'IN'), ('the', 'DT'), ('U.S.', 'NNP'), ('.', '.')]
+
+Tagging accuracies:
+-------------------
+Affix tagger:  27.56 %
+Unigram tagger:  86.08 %
+Bigram tagger:  13.47 %
+Trigram tagger:  8.06 %
+
+Tagging accuracies with backoff:
+--------------------------------
+Affix tagger evaluation:  27.56 %
+Unigram tagger evaluation:  89.85 %
+Bigram tagger evaluation:  90.8 %
+Trigram tagger evaluation:  90.72 %
+
+Accuracy of the default tagger in NLTK:  89.15 %
