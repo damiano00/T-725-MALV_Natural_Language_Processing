@@ -27,10 +27,10 @@ python train.py config/train_shakespeare_char.py --compile=False --eval_iters=20
 # 2 - more iterations, one more layer --> too random and unrelated outputs also with temp = 1
 python train.py config/train_shakespeare_char.py --compile=False --eval_iters=20 --log_interval=1 --block_size=64 --batch_size=12 --n_layer=5 --n_head=4 --n_embd=128 --max_iters=3000 --lr_decay_iters=3000 --dropout=0.0
 # 3 - more iteration, more layers, more n_embd --> too random and unrelated outputs. With temp =0.2 "Court of Appeals" is repeated in every sentence
-python train.py config/train_shakespeare_char.py --compile=False --eval_iters=20 --log_interval=10 --block_size=64 --batch_size=12 --n_layer=7 --n_head=4 --n_embd=256 --max_iters=5000 --lr_decay_iters=5000 --dropout=0.0
+python train.py config/train_shakespeare_char.py --compile=False --eval_iters=20 --log_interval=10 --block_size=64 --batch_size=12 --n_layer=7 --n_head =4 --n_embd=256 --max_iters=5000 --lr_decay_iters=5000 --dropout=0.0
 # 4 - less evaluate iterations --> no improvements
 python train.py config/train_shakespeare_char.py --compile=False --eval_iters=10 --log_interval=10 --block_size=64 --batch_size=12 --n_layer=7 --n_head=4 --n_embd=256 --max_iters=5000 --lr_decay_iters=5000 --dropout=0.0
-# 5 - block_size, n_layer, iterations, n_embd --> some random words, but better results about context (more meaningful sentences)
+# 5 - block_size, n_layer, iterations, n_embd --> some random words, but better results about context (more meaningful sentences) 16:25
 python train.py config/train_shakespeare_char.py --compile=False --eval_iters=20 --log_interval=10 --block_size=128 --batch_size=12 --n_layer=10 --n_head=4 --n_embd=512 --max_iters=7000 --lr_decay_iters=7000 --dropout=0.0
 # 6 - block_size, batch_size, iterations --> less random words, sentences better structured and also more realistic speakers
 python train.py config/train_shakespeare_char.py --compile=False --eval_iters=20 --log_interval=10 --block_size=273 --batch_size=80 --n_layer=10 --n_head=4 --n_embd=512 --max_iters=10000 --lr_decay_iters=10000 --dropout=0.0
