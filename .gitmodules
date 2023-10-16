@@ -1,0 +1,3 @@
+[submodule "Broca-translator"]
+	path = Broca-translator
+	url = https://github.com/AndreaTerenz/Broca-translator.git
